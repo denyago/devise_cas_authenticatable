@@ -10,6 +10,7 @@ module DeviseCasAuthenticatable
 
           check_method(label, strategy, :store_session_id_for_index)
           check_method(label, strategy, :find_session_id_by_index)
+          check_method(label, strategy, :delete_session_id_by_index)
           check_method(label, strategy, :delete_session_index)
 
           unless strategy.ancestors.include?(DeviseCasAuthenticatable::SingleSignOut::Strategies::Base)
