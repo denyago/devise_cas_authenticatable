@@ -51,8 +51,7 @@ module DeviseCasAuthenticatable
       def get_first_middleware_app
         # For case of running in production mode.
         @first_middleware_app ||= if defined?(Rack::Cache::Context) && Rails.application.app.class == Rack::Cache::Context
-                                    Rails.application.app.
-                                      instance_variable_get(:@backend).instance_variable_get(:@app)
+                                    Rails.application.instance_variable_get(:@app)
                                   else
                                     Rails.application.app
                                   end
